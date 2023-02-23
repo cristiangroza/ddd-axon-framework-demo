@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  axon-server:
+    image: axoniq/axonserver:4.5.7-dev-arm # for apple silicon only
+    hostname: axonserver
+    networks:
+      - ddd-axon-demo
+    ports:
+      - '8024:8024'
+      - '8124:8124'
+      - '8224:8224'
+    volumes:
+      - ./data:/axonserver/data
+      - ./axon-config:/axonserver/config
+      - ./eventdata:/axonserver/eventdata
+
+networks:
+  ddd-axon-demo:
