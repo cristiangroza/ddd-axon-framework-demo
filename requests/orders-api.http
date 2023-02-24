@@ -6,3 +6,13 @@ Content-Type: application/json
 
 }
 
+### Add product to order
+POST http://localhost:8081/orders/35ad3972-7e41-42b4-a490-49de6a7fcf69/products
+Content-Type: application/json
+
+{
+  "productId": "ABC123",
+  "name": "Shoes",
+  "amount": 3,
+  "pricePerUnit": 4.99
+}
