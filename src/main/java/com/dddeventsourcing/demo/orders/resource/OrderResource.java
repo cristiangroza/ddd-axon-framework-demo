@@ -22,7 +22,7 @@ public class OrderResource {
         this.commandGateway = commandGateway;
     }
 
-    @PostMapping("/orders/")
+    @PostMapping("/orders")
     public Mono<ResponseEntity<String>> createOrder() {
         var createOrderCommand = new CreateOrderCommand(UUID.randomUUID().toString());
 

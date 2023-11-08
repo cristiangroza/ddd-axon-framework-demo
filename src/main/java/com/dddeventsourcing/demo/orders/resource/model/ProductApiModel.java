@@ -5,6 +5,4 @@ public record ProductApiModel(String productId,
                               int amount,
                               double pricePerUnit) {
 
-    public ProductApiModel {
-    }
 }

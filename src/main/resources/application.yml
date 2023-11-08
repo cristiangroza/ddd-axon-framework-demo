@@ -1,6 +1,10 @@
+server:
+  port: 8081
 spring:
   application:
     name: ddd-event-sourcing-demo-app-${server.port}
 axon:
   axonserver:
     enabled: true # does not need to be explicit as default is 'true'
+  serializer:
+    general: jackson

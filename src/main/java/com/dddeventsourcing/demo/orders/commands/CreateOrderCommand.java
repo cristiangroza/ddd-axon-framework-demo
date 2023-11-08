@@ -1,16 +1,11 @@
 package com.dddeventsourcing.demo.orders.commands;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
-public class CreateOrderCommand {
-    @TargetAggregateIdentifier
-    private String id;
-
-    public CreateOrderCommand(String id) {
-        this.id = id;
+public record CreateOrderCommand(@TargetAggregateIdentifier String id) {
+    @JsonCreator
+    public CreateOrderCommand {
     }
 
-    public String getId() {
-        return id;
-    }
 }

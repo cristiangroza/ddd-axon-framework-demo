@@ -16,3 +16,6 @@ Content-Type: application/json
   "amount": 3,
   "pricePerUnit": 4.99
 }
+
+### Get orders
+GET http://localhost:8081/orders

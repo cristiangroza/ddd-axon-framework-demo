@@ -37,13 +37,13 @@ public class OrderAggregate {
 
     @CommandHandler
     public OrderAggregate(CreateOrderCommand command) {
-        AggregateLifecycle.apply(new OrderCreatedEvent(command.getId(), OrderStatus.DRAFT.toString()));
+        AggregateLifecycle.apply(new OrderCreatedEvent(command.id(), OrderStatus.DRAFT.toString()));
     }
 
     @EventSourcingHandler
     public void on(OrderCreatedEvent event) {
-        this.orderId = event.getId();
-        this.status = OrderStatus.valueOf(event.getStatus());
+        this.orderId = event.id();
+        this.status = OrderStatus.valueOf(event.status());
         log.info(toString());
     }
 

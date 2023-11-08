@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   axon-server:
-    image: axoniq/axonserver:4.5.7-dev-arm # for apple silicon only
+    image: axoniq/axonserver:2023.2.1-jdk-17
     hostname: axonserver
     networks:
       - ddd-axon-demo
@@ -13,7 +13,7 @@ services:
     volumes:
       - ./data:/axonserver/data
       - ./axon-config:/axonserver/config
-      - ./eventdata:/axonserver/eventdata
+      - ./events:/axonserver/events
 
 networks:
   ddd-axon-demo:
